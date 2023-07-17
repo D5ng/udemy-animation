@@ -53,9 +53,10 @@ class App extends Component {
             );
           }}
         </Transition>
-        <Transition in={this.state.modalIsOpen} timeout={300} mountOnEnter unmountOnExit>
+        <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
+        {/* <Transition in={this.state.modalIsOpen} timeout={300} mountOnEnter unmountOnExit>
           {(state) => <Modal show={state} closed={this.closeModal} />}
-        </Transition>
+        </Transition> */}
         {/* {this.state.modalIsOpen ? <Modal show={this.showModal} /> : <Modal closed={this.closeModal} />} */}
         {this.state.modalIsOpen ? <Backdrop show={this.state.modalIsOpen} /> : <Backdrop show={this.state.modalIsOpen} />}
         <button className="Button" onClick={this.showModal}>
